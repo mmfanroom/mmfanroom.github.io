@@ -19,8 +19,13 @@
     </div>
     <div class="hero-art">
       <div class="frame">
-        {{ with resources.Get "images/hero.jpg" }}
-          <img src="{{ .RelPermalink }}" alt="Marcus & Martinus">
+        {{ $hero := "" }}
+        {{ range slice "images/hero.jpg" "images/hero.jpeg" "images/hero.png" "images/hero.webp" }}
+          {{ with resources.Get . }}{{ $hero = . }}{{ end }}
+        {{ end }}
+        {{ with $hero }}
+          {{ $img := .Process "resize 840x webp q82" }}
+          <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="Marcus & Martinus" loading="eager">
         {{ else }}
           {{ partial "icon.html" "music" }}
         {{ end }}
