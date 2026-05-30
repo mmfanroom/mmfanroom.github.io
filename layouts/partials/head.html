@@ -5,11 +5,19 @@
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <meta name="theme-color" content="#07061a">
 
+  {{/* Icons */}}
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16.png" | relURL }}">
+  <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+
   {{/* Social cards */}}
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}">
   <meta property="og:description" content="{{ .Site.Params.description }}">
   <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:image" content="{{ "og-image.png" | absURL }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ "og-image.png" | absURL }}">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -1,0 +1,11 @@
+{{- /* Site brand: neon wordmark image with an accessible text fallback.
+       Falls back to the CSS text mark if assets/images/logo.png is missing. */ -}}
+<a class="logo" href="{{ "/" | relURL }}" aria-label="{{ .Site.Title }} home">
+  {{ with resources.Get "images/logo.png" }}
+    {{ $logo := .Process "resize x120 webp q90" }}
+    <img class="logo-img" src="{{ $logo.RelPermalink }}" width="{{ $logo.Width }}" height="{{ $logo.Height }}" alt="{{ $.Site.Title }}">
+  {{ else }}
+    <span class="mark"><span class="m">M</span><span class="amp">&amp;</span><span class="m">M</span></span>
+    <span class="sub">FAN ROOM</span>
+  {{ end }}
+</a>

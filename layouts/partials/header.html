@@ -1,9 +1,6 @@
 <header class="site-header">
   <div class="container nav-bar">
-    <a class="logo" href="{{ "/" | relURL }}" aria-label="{{ .Site.Title }} home">
-      <span class="mark"><span class="m">M</span><span class="amp">&amp;</span><span class="m">M</span></span>
-      <span class="sub">FAN ROOM</span>
-    </a>
+    {{ partial "brand.html" . }}
 
     <span class="badge-unofficial">{{ .Site.Params.unofficialBadge }}</span>
 

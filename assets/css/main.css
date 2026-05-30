@@ -100,6 +100,9 @@ main { display: block; }
   height: 70px;
 }
 .logo { display: flex; flex-direction: column; line-height: 0.95; font-family: var(--font-head); }
+.logo-img { height: 46px; width: auto; display: block; }
+.site-footer .logo-img { height: 60px; }
+@media (max-width: 760px) { .logo-img { height: 40px; } }
 .logo .mark { font-size: 1.6rem; font-weight: 800; letter-spacing: 1px; }
 .logo .mark .m { color: var(--blue-br); }
 .logo .mark .amp { color: var(--pink); }
