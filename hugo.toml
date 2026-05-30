@@ -1,7 +1,7 @@
 # =============================================================
 #  M&M Fan Room — unofficial Marcus & Martinus fan site
 # =============================================================
-baseURL = "https://mmfanroom.github.io/"
+baseURL = "https://mmfanroom.com/"
 languageCode = "en-us"
 title = "M&M Fan Room"
 enableEmoji = true
