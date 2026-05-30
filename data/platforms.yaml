@@ -1,0 +1,16 @@
+# "Support the artists — listen on official platforms" banner (Music page).
+- name: Spotify
+  icon: spotify
+  url: "https://open.spotify.com/artist/5Vkk6sQYVefn4S6mZWj2L0"
+- name: Apple Music
+  icon: applemusic
+  url: "https://music.apple.com/"
+- name: YouTube
+  icon: youtube
+  url: "https://youtube.com/@marcusandmartinus"
+- name: Deezer
+  icon: deezer
+  url: "https://www.deezer.com/"
+- name: Amazon Music
+  icon: amazon
+  url: "https://music.amazon.com/"

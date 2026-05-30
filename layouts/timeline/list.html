@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h1>{{ .Title }} <span class="eyebrow">♪</span></h1>
+      <p>{{ .Params.subtitle }}</p>
+    </div>
+
+    <div class="timeline">
+      {{ range .Site.Data.timeline }}
+        <div class="tl-row">
+          <div class="tl-year">{{ .year }}</div>
+          <span class="tl-dot"></span>
+          <div class="tl-body">
+            <p>{{ .text }}</p>
+            {{ with .image }}<img class="photo" src="{{ . | relURL }}" alt="">{{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="note-bar">
+      More moments will be added as the journey continues.<br>
+      This is our timeline — as fans. 💜
+    </div>
+  </div>
+</section>
+{{ end }}

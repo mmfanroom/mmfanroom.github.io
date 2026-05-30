@@ -1,0 +1,25 @@
+<header class="site-header">
+  <div class="container nav-bar">
+    <a class="logo" href="{{ "/" | relURL }}" aria-label="{{ .Site.Title }} home">
+      <span class="mark"><span class="m">M</span><span class="amp">&amp;</span><span class="m">M</span></span>
+      <span class="sub">FAN ROOM</span>
+    </a>
+
+    <span class="badge-unofficial">{{ .Site.Params.unofficialBadge }}</span>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      {{ partial "icon.html" "menu" }}
+    </button>
+
+    <nav>
+      <ul class="nav-links" id="navlinks">
+        {{ $cur := .RelPermalink }}
+        {{ range .Site.Menus.main }}
+          {{ $u := .URL | relLangURL }}
+          {{ $active := or (eq $cur $u) (and (ne $u "/") (not (strings.Contains $u "#")) (hasPrefix $cur $u)) }}
+          <li><a href="{{ .URL | relURL }}"{{ if $active }} class="active"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

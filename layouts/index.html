@@ -1,0 +1,76 @@
+{{ define "main" }}
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="welcome">✦ Welcome to</p>
+      <h1 class="hero-title"><span class="m">M</span><span class="amp">&amp;</span><span class="m">M</span> FAN ROOM</h1>
+      <p class="hero-script">{{ .Site.Params.tagline }}</p>
+      <p class="lead">A fan-made space for everyone who loves Marcus &amp; Martinus. Music, memories, concerts, timelines and fan moments.</p>
+      <div class="hero-cta">
+        <a class="btn btn-purple" href="{{ "/timeline/" | relURL }}">Explore Timeline</a>
+        <a class="btn btn-blue" href="{{ "/fanwall/" | relURL }}">Visit Fan Wall</a>
+        <a class="btn btn-ghost" href="{{ .Site.Params.officialWebsite }}" target="_blank" rel="noopener">
+          Official Website {{ partial "icon.html" "external" }}
+        </a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="frame">
+        {{ with resources.Get "images/hero.jpg" }}
+          <img src="{{ .RelPermalink }}" alt="Marcus & Martinus">
+        {{ else }}
+          {{ partial "icon.html" "music" }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  {{ partial "disclaimer.html" . }}
+</div>
+
+<!-- ===== Why fans love them ===== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Why Fans Love Them <span class="eyebrow">♡</span></h2>
+    </div>
+    <div class="feature-grid">
+      {{ range .Site.Data.whylove }}
+        <div class="feature card">
+          <div class="ico">{{ partial "icon.html" .icon }}</div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .text }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ===== New fan? Start here ===== -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <h2>New Fan? Start Here! <span class="eyebrow">♫</span></h2>
+    </div>
+    <div class="starter-grid">
+      {{ range .Site.Data.starter }}
+        {{ $tag := "a" }}
+        <a class="starter" {{ with .link }}href="{{ . }}" target="_blank" rel="noopener"{{ else }}href="{{ "/music/" | relURL }}"{{ end }}>
+          {{ with .image }}<img src="{{ . | relURL }}" alt="{{ $.Title }}">{{ end }}
+          <span class="play">{{ partial "icon.html" "play" }}</span>
+          <span class="label">{{ .title }}</span>
+        </a>
+      {{ end }}
+    </div>
+    <div class="center-cta">
+      <a class="btn btn-ghost" href="{{ "/music/" | relURL }}">See All Song Guides</a>
+    </div>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,5 @@
+# Drop site images here. Referenced paths used by the templates:
+#   static/images/hero.jpg            -> hero photo (home)
+#   static/images/songs/<name>.jpg    -> song covers (data/songs.yaml, data/starter.yaml)
+#   static/images/timeline/<name>.jpg -> timeline photos (data/timeline.yaml)
+#   static/images/fanwall/<name>.jpg  -> fan wall images (data/fanwall.yaml)

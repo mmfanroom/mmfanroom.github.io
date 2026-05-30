@@ -1,0 +1,68 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h1>{{ .Title }}</h1>
+      <p>{{ .Params.subtitle }}</p>
+    </div>
+
+    <!-- Filter pills -->
+    <div class="pills" id="music-pills">
+      {{ range $i, $cat := .Site.Data.musiccats }}
+        <button class="pill{{ if eq $i 0 }} active{{ end }}" data-filter="{{ $cat }}">{{ $cat }}</button>
+      {{ end }}
+    </div>
+
+    <!-- Song grid -->
+    <div class="song-grid" id="song-grid">
+      {{ $first := index .Site.Data.musiccats 0 }}
+      {{ range .Site.Data.songs }}
+        {{ $cats := delimit .categories "|" }}
+        <div class="song" data-cats="{{ $cats }}"{{ if not (in .categories $first) }} hidden{{ end }}>
+          {{ with .image }}<img class="thumb" src="{{ . | relURL }}" alt="{{ $.title }}">{{ else }}<span class="thumb"></span>{{ end }}
+          <div class="meta">
+            <h3>{{ .title }}</h3>
+            <p>{{ .desc }}</p>
+          </div>
+          <a class="play-sm" {{ with .link }}href="{{ . }}" target="_blank" rel="noopener"{{ else }}href="#"{{ end }} aria-label="Play {{ .title }}">
+            {{ partial "icon.html" "play" }}
+          </a>
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="center-cta">
+      <a class="btn btn-ghost" href="#">View All Song Guides</a>
+    </div>
+
+    <!-- Support banner -->
+    <div class="support">
+      <p>Support the artists. Listen on official platforms!</p>
+      <div class="row">
+        <span style="color:var(--purple-br)">{{ partial "icon.html" "star" }}</span>
+        {{ range .Site.Data.platforms }}
+          <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}" title="{{ .name }}">{{ partial "icon.html" .icon }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var pills = document.querySelectorAll('#music-pills .pill');
+    var songs = document.querySelectorAll('#song-grid .song');
+    pills.forEach(function (p) {
+      p.addEventListener('click', function () {
+        pills.forEach(function (x) { x.classList.remove('active'); });
+        p.classList.add('active');
+        var f = p.getAttribute('data-filter');
+        songs.forEach(function (s) {
+          var cats = (s.getAttribute('data-cats') || '').split('|');
+          s.hidden = cats.indexOf(f) === -1;
+        });
+      });
+    });
+  })();
+</script>
+{{ end }}

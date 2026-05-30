@@ -1,0 +1,44 @@
+<footer class="site-footer" id="official">
+  <div class="container footer-grid">
+    <div>
+      <a class="logo" href="{{ "/" | relURL }}">
+        <span class="mark"><span class="m">M</span><span class="amp">&amp;</span><span class="m">M</span></span>
+        <span class="sub">FAN ROOM</span>
+      </a>
+      <p>Independent fan site for Marcus &amp; Martinus.</p>
+    </div>
+
+    <div>
+      <h4>Important</h4>
+      <p>This is an unofficial fan site and is not affiliated with Marcus &amp; Martinus, their team, or any official organization.</p>
+    </div>
+
+    <div>
+      <h4>Official Links</h4>
+      <div class="footer-socials">
+        {{ range .Site.Data.official }}
+          <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .name }}" title="{{ .name }}">
+            {{ partial "icon.html" .icon }}
+          </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    © {{ now.Year }} {{ .Site.Title }} · Made by fans, for fans 💜 · Always support the artists through official channels.
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var t = document.querySelector('.nav-toggle');
+    var n = document.getElementById('navlinks');
+    if (t && n) {
+      t.addEventListener('click', function () {
+        var open = n.classList.toggle('open');
+        t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  })();
+</script>

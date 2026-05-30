@@ -1,0 +1,18 @@
+# "New fan? Start here!" song picks on the home page.
+# Drop a cover image in static/images/songs/ and reference it as image.
+# Add a YouTube/official link as `link` to make the play button clickable.
+- title: Elektrisk
+  image: ""
+  link: ""
+- title: Girls
+  image: ""
+  link: ""
+- title: Heartbeat
+  image: ""
+  link: ""
+- title: Air
+  image: ""
+  link: ""
+- title: Unforgettable
+  image: ""
+  link: ""

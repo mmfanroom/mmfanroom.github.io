@@ -1,0 +1,23 @@
+# "The Journey So Far" — vertical timeline entries.
+# Add an `image` (static/images/timeline/) to show a photo on the right.
+- year: "2002"
+  text: Born on February 21 in Elverum, Norway.
+  image: ""
+- year: "2012"
+  text: Started posting covers on YouTube – the beginning!
+  image: ""
+- year: "2015"
+  text: Breakthrough in Norway with "Elektrisk" and "Plystre på deg".
+  image: ""
+- year: "2016"
+  text: International success with "Girls".
+  image: ""
+- year: "2018 – 2022"
+  text: New music, tours, and a growing, amazing global fanbase.
+  image: ""
+- year: "2024"
+  text: 'Melodifestivalen & Eurovision: "Unforgettable" – representing Sweden.'
+  image: ""
+- year: "2025 / 2026"
+  text: The Room era & European Tour – new music, new memories.
+  image: ""

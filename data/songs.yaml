@@ -1,0 +1,44 @@
+# Song guides shown on the Music page.
+# `categories` controls which filter pills a song appears under.
+# Valid categories live in data/musiccats.yaml.
+# `image` = cover in static/images/songs/ ; `link` = official/YouTube link.
+- title: Elektrisk
+  desc: The song that started a new chapter. Pure energy!
+  categories: ["New Fan Starter Pack", "Norwegian Era"]
+  image: ""
+  link: ""
+- title: Girls
+  desc: The breakthrough hit that changed everything.
+  categories: ["New Fan Starter Pack", "Norwegian Era"]
+  image: ""
+  link: ""
+- title: Heartbeat
+  desc: A fan-favorite with a message that hits deep.
+  categories: ["New Fan Starter Pack", "Emotional Songs"]
+  image: ""
+  link: ""
+- title: Air
+  desc: Dreamy, emotional and beautifully made.
+  categories: ["Emotional Songs"]
+  image: ""
+  link: ""
+- title: Unforgettable
+  desc: Their Eurovision 2024 entry. A moment in history.
+  categories: ["Eurovision Era", "New Fan Starter Pack"]
+  image: ""
+  link: ""
+- title: Gimme Your Love
+  desc: Upbeat, catchy and impossible not to dance.
+  categories: ["Live Favorites"]
+  image: ""
+  link: ""
+- title: We Are Not the Same
+  desc: Powerful lyrics and unforgettable vibes.
+  categories: ["Emotional Songs", "Live Favorites"]
+  image: ""
+  link: ""
+- title: Die For You
+  desc: Raw, honest and so meaningful.
+  categories: ["Emotional Songs"]
+  image: ""
+  link: ""

@@ -1,0 +1,57 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h1>{{ .Title }} <span class="eyebrow">♡</span></h1>
+      <p>{{ .Params.subtitle }}</p>
+    </div>
+
+    <!-- Filter pills -->
+    <div class="pills" id="wall-pills">
+      {{ range $i, $cat := .Site.Data.fanwallcats }}
+        <button class="pill{{ if eq $i 0 }} active{{ end }}" data-filter="{{ $cat }}">{{ $cat }}</button>
+      {{ end }}
+    </div>
+
+    <!-- Posts -->
+    <div class="wall" id="wall">
+      {{ range .Site.Data.fanwall }}
+        <div class="post" data-type="{{ .type }}">
+          <div class="head">
+            <span class="avatar">{{ substr .handle 0 1 | upper }}</span>
+            <span class="handle">@{{ .handle }}</span>
+          </div>
+          {{ with .image }}<img class="img" src="{{ . | relURL }}" alt="">{{ end }}
+          <p>{{ .text }}</p>
+          {{ with .location }}<span class="loc">📍 {{ . }}</span>{{ end }}
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="center-cta">
+      <a class="btn btn-purple" href="#">Share Your Story {{ partial "icon.html" "plus" }}</a>
+    </div>
+
+    <div class="guidelines">
+      Be kind <span>•</span> No private info <span>•</span> No rumors <span>•</span> Respect everyone <span>•</span> Credit creators
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var pills = document.querySelectorAll('#wall-pills .pill');
+    var posts = document.querySelectorAll('#wall .post');
+    pills.forEach(function (p) {
+      p.addEventListener('click', function () {
+        pills.forEach(function (x) { x.classList.remove('active'); });
+        p.classList.add('active');
+        var f = p.getAttribute('data-filter');
+        posts.forEach(function (s) {
+          s.hidden = (f !== 'All' && s.getAttribute('data-type') !== f);
+        });
+      });
+    });
+  })();
+</script>
+{{ end }}

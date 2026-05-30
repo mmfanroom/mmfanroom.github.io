@@ -1,0 +1,40 @@
+# Concert Guide cards (3 x 2 grid).
+- icon: bag
+  title: Before the Show
+  items:
+    - What to bring
+    - Outfit ideas
+    - Travel tips
+    - What time to arrive
+- icon: pin
+  title: At the Venue
+  items:
+    - Venue info
+    - Security tips
+    - Queuing & entry
+    - Stay safe
+- icon: mic
+  title: During the Show
+  items:
+    - Sing your heart out
+    - Enjoy the moment
+    - Be respectful
+- icon: star
+  title: Fan Projects
+  items:
+    - Fan chants
+    - Signs & banners
+    - Light projects
+    - How to join
+- icon: list
+  title: Setlist Memories
+  items:
+    - Past setlists
+    - Favorite moments
+    - Share your videos & photos
+- icon: heart
+  title: After the Show
+  items:
+    - Share your memories
+    - Photo dumps
+    - Stay connected

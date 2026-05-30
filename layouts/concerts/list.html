@@ -1,0 +1,31 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h1>{{ .Title }}</h1>
+      <p>{{ .Params.subtitle }}</p>
+    </div>
+
+    <div class="banner-soft">
+      {{ partial "icon.html" "ticket" }}
+      <p>Always check official channels for the latest dates, venues and tickets. Our guides are here to help you prepare and make memories!</p>
+    </div>
+
+    <div class="guide-grid">
+      {{ range .Site.Data.concertguide }}
+        <div class="guide card">
+          <h3>{{ partial "icon.html" .icon }} {{ .title }}</h3>
+          <ul>
+            {{ range .items }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="banner-link">
+      <strong>Official tickets &amp; VIP packages</strong> →
+      <a href="{{ .Site.Params.officialWebsite }}" target="_blank" rel="noopener">Visit the official website {{ partial "icon.html" "external" }}</a>
+    </div>
+  </div>
+</section>
+{{ end }}

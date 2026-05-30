@@ -1,0 +1,17 @@
+# Official links shown in the footer (#official anchor).
+# These point to the artists' real, official channels — update if they change.
+- name: Website
+  icon: globe
+  url: "https://marcusandmartinus.com"
+- name: Instagram
+  icon: instagram
+  url: "https://instagram.com/marcusandmartinus"
+- name: YouTube
+  icon: youtube
+  url: "https://youtube.com/@marcusandmartinus"
+- name: Spotify
+  icon: spotify
+  url: "https://open.spotify.com/artist/5Vkk6sQYVefn4S6mZWj2L0"
+- name: TikTok
+  icon: tiktok
+  url: "https://www.tiktok.com/@marcusandmartinus"

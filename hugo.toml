@@ -1,0 +1,57 @@
+# =============================================================
+#  M&M Fan Room — unofficial Marcus & Martinus fan site
+# =============================================================
+baseURL = "https://mmfanroom.github.io/"
+languageCode = "en-us"
+title = "M&M Fan Room"
+enableEmoji = true
+
+# Pretty section URLs, no taxonomies needed for now
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  shortName       = "M&M Fan Room"
+  tagline         = "For the fans. By the fans."
+  description     = "An independent, fan-made space for everyone who loves Marcus & Martinus. Music, memories, concerts, timelines and fan moments."
+  unofficialBadge = "Unofficial Fan Site"
+  # Change this to the real official site once confirmed.
+  officialWebsite = "https://marcusandmartinus.com"
+  # Full disclaimer shown on the home page + footer.
+  disclaimer = "This is an independent fan project. We are not affiliated with Marcus & Martinus, their management, record label, tour organizers, or official channels. For official news, tickets, merch and announcements, always use the official channels."
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+# ----- Main navigation -----
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 10
+[[menu.main]]
+  name = "Music"
+  url = "/music/"
+  weight = 20
+[[menu.main]]
+  name = "Timeline"
+  url = "/timeline/"
+  weight = 30
+[[menu.main]]
+  name = "Concerts"
+  url = "/concerts/"
+  weight = 40
+[[menu.main]]
+  name = "Fan Wall"
+  url = "/fanwall/"
+  weight = 50
+[[menu.main]]
+  name = "Quiz"
+  url = "/quiz/"
+  weight = 60
+[[menu.main]]
+  name = "Gallery"
+  url = "/gallery/"
+  weight = 70
+[[menu.main]]
+  name = "Official Links"
+  url = "/#official"
+  weight = 80

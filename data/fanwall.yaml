@@ -1,0 +1,27 @@
+# Fan Wall posts. `type` must match an entry in data/fanwallcats.yaml.
+# Optional: `location` (small caption) and `image` (static/images/fanwall/).
+- handle: emmam
+  type: Memories
+  text: My first M&M concert was the best day ever. I cried so much! 💜
+  location: Stockholm 2024
+  image: ""
+- handle: mmaxine
+  type: Fan Art
+  text: Fan art I made for The Room era!
+  image: ""
+- handle: martinusgirl
+  type: Messages
+  text: These two changed my life. Thank you for everything. 💙
+  image: ""
+- handle: live.love.mnm
+  type: Memories
+  text: The energy in Berlin was INSANE! Can't wait to see them again!
+  image: ""
+- handle: mm_fan4ever
+  type: Outfits & Signs
+  text: Made friendship bracelets for the concert!
+  image: ""
+- handle: forever_mnm
+  type: Messages
+  text: You are not just artists, you are our inspiration.
+  image: ""
