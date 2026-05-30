@@ -218,7 +218,10 @@ main { display: block; }
   overflow: hidden; border: 1px solid var(--line);
   background: linear-gradient(160deg, #2a1858, #131a48);
   display: grid; place-items: center;
+  width: 100%; padding: 0; cursor: pointer; color: inherit; font: inherit;
+  transition: border-color .18s ease, transform .18s ease;
 }
+.starter:hover { border-color: var(--purple-br); transform: translateY(-3px); }
 .starter img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .85; }
 .starter .play {
   position: relative; z-index: 2; width: 54px; height: 54px; border-radius: 999px;
@@ -259,13 +262,24 @@ main { display: block; }
   width: 54px; height: 54px; border-radius: 10px; flex: none; object-fit: cover;
   background: linear-gradient(150deg, #311a63, #15204f);
 }
+.thumb-btn {
+  position: relative; flex: none; padding: 0; border: 0; background: none;
+  cursor: pointer; border-radius: 10px; overflow: hidden; line-height: 0;
+}
+.thumb-btn .thumb-play {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  background: rgba(7, 6, 26, 0.35); opacity: 0; transition: opacity .15s;
+}
+.thumb-btn .thumb-play svg { width: 20px; height: 20px; color: #fff; }
+.thumb-btn:hover .thumb-play { opacity: 1; }
 .song .meta { flex: 1; min-width: 0; }
 .song .meta h3 { font-size: 0.98rem; margin-bottom: 2px; }
 .song .meta p { margin: 0; color: var(--muted); font-size: 0.83rem; }
 .song .play-sm {
   width: 38px; height: 38px; border-radius: 999px; flex: none;
-  border: 1px solid var(--line); background: rgba(255,255,255,0.03);
-  display: grid; place-items: center; transition: background .2s, border-color .2s;
+  border: 1px solid var(--line); background: rgba(255,255,255,0.03); color: inherit;
+  display: grid; place-items: center; cursor: pointer; padding: 0;
+  transition: background .2s, border-color .2s;
 }
 .song .play-sm:hover { background: var(--grad); border-color: transparent; }
 .song .play-sm svg { width: 15px; height: 15px; margin-left: 2px; }
@@ -381,6 +395,27 @@ main { display: block; }
 /* ---------- Plain content (quiz / gallery) ---------- */
 .prose { max-width: 680px; margin: 0 auto; text-align: center; color: var(--muted); font-size: 1.05rem; }
 .prose a { color: var(--blue-br); }
+
+/* ---------- YouTube lightbox ---------- */
+.yt-lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center; padding: 24px;
+  background: rgba(4, 3, 14, 0.86); backdrop-filter: blur(6px);
+}
+.yt-lightbox[hidden] { display: none; }
+.yt-frame {
+  position: relative; width: min(960px, 100%); aspect-ratio: 16/9;
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--line); box-shadow: var(--shadow);
+}
+.yt-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.yt-close {
+  position: absolute; top: 18px; right: 22px; z-index: 2;
+  width: 44px; height: 44px; border-radius: 999px; cursor: pointer;
+  background: rgba(255,255,255,0.08); border: 1px solid var(--line); color: #fff;
+  font-size: 1.6rem; line-height: 1; transition: background .15s, border-color .15s;
+}
+.yt-close:hover { background: var(--grad); border-color: transparent; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {

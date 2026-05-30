@@ -18,21 +18,26 @@
       {{ $first := index .Site.Data.musiccats 0 }}
       {{ range .Site.Data.songs }}
         {{ $cats := delimit .categories "|" }}
+        {{ $thumb := .image }}
+        {{ if and (not $thumb) .youtube }}{{ $thumb = printf "https://img.youtube.com/vi/%s/hqdefault.jpg" .youtube }}{{ end }}
         <div class="song" data-cats="{{ $cats }}"{{ if not (in .categories $first) }} hidden{{ end }}>
-          {{ with .image }}<img class="thumb" src="{{ . | relURL }}" alt="{{ $.title }}">{{ else }}<span class="thumb"></span>{{ end }}
+          <button class="thumb-btn"{{ with .youtube }} data-yt="{{ . }}"{{ end }} aria-label="Play {{ .title }}">
+            {{ with $thumb }}<img class="thumb" src="{{ . }}" alt="" loading="lazy">{{ else }}<span class="thumb"></span>{{ end }}
+            <span class="thumb-play">{{ partial "icon.html" "play" }}</span>
+          </button>
           <div class="meta">
             <h3>{{ .title }}</h3>
             <p>{{ .desc }}</p>
           </div>
-          <a class="play-sm" {{ with .link }}href="{{ . }}" target="_blank" rel="noopener"{{ else }}href="#"{{ end }} aria-label="Play {{ .title }}">
+          <button class="play-sm"{{ with .youtube }} data-yt="{{ . }}"{{ end }} aria-label="Play {{ .title }}">
             {{ partial "icon.html" "play" }}
-          </a>
+          </button>
         </div>
       {{ end }}
     </div>
 
     <div class="center-cta">
-      <a class="btn btn-ghost" href="#">View All Song Guides</a>
+      <a class="btn btn-ghost" href="https://www.youtube.com/@marcusandmartinus/videos" target="_blank" rel="noopener">More on their YouTube {{ partial "icon.html" "external" }}</a>
     </div>
 
     <!-- Support banner -->

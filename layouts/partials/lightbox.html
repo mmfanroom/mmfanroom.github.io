@@ -1,0 +1,37 @@
+{{- /* Global YouTube lightbox. Any element with data-yt="VIDEO_ID" opens it. */ -}}
+<div class="yt-lightbox" id="yt-lightbox" hidden aria-hidden="true">
+  <button class="yt-close" id="yt-close" aria-label="Close video">&times;</button>
+  <div class="yt-frame">
+    <iframe id="yt-iframe" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var box = document.getElementById('yt-lightbox');
+    var frame = document.getElementById('yt-iframe');
+    var closeBtn = document.getElementById('yt-close');
+    if (!box || !frame) return;
+
+    function open(id) {
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      box.hidden = false;
+      box.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      box.hidden = true;
+      box.setAttribute('aria-hidden', 'true');
+      frame.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest('[data-yt]');
+      if (t) { e.preventDefault(); open(t.getAttribute('data-yt')); }
+    });
+    closeBtn.addEventListener('click', close);
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !box.hidden) close(); });
+  })();
+</script>
