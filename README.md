@@ -11,6 +11,7 @@ music, memories, concerts, timelines and fan moments.
 
 - [Hugo](https://gohugo.io/) (extended) — no external theme; the theme lives in `layouts/` + `assets/`.
 - Plain CSS design system in `assets/css/main.css` (dark theme, neon accents).
+- Stage Rush uses an HTML5 Canvas renderer and a testable vanilla JavaScript game core.
 - Content is **data-driven**: most page content lives in `data/*.yaml`, so you can
   edit songs, timeline entries, fan posts etc. without touching templates.
 
@@ -26,6 +27,12 @@ Build the static site:
 ```bash
 hugo --gc --minify
 # output in ./public
+```
+
+Run the Stage Rush game-rule tests:
+
+```bash
+node --test tests/game-core.test.js
 ```
 
 ## Editing content
@@ -50,7 +57,7 @@ paths) and reference them from the matching data file's `image:` field.
 
 ## Pages
 
-`Home · Music · Timeline · Concerts · Fan Wall · Quiz · Gallery`
+`Home · Music · Timeline · Concerts · Fan Wall · Game · Quiz · Gallery`
 (Quiz & Gallery are placeholders — content coming soon.)
 
 ## Deploy (GitHub Pages)
@@ -58,5 +65,5 @@ paths) and reference them from the matching data file's `image:` field.
 `.github/workflows/hugo.yml` builds and deploys on every push to `main`.
 In the repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
-The repo name `mmfanroom.github.io` publishes at the domain root, which matches
-`baseURL` in `hugo.toml`.
+The site uses the custom domain `mmfanroom.com`, configured by `static/CNAME`
+and `baseURL` in `hugo.toml`.

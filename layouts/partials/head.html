@@ -31,4 +31,15 @@
       <link rel="stylesheet" href="{{ .RelPermalink }}">
     {{ end }}
   {{ end }}
+
+  {{ if eq .Section "game" }}
+    {{ with resources.Get "css/game.css" }}
+      {{ if hugo.IsProduction }}
+        {{ $gameCSS := . | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ $gameCSS.RelPermalink }}" integrity="{{ $gameCSS.Data.Integrity }}">
+      {{ else }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{ end }}
+    {{ end }}
+  {{ end }}
 </head>
