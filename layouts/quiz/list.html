@@ -1,0 +1,95 @@
+{{ define "main" }}
+<section class="quiz-page">
+  <div class="container quiz-container">
+    <header class="quiz-intro">
+      <div>
+        <span class="quiz-kicker">24 questions · all eras</span>
+        <h1>M&amp;M <span>Fan Quiz</span></h1>
+      </div>
+      <p>How well do you really know Marcus &amp; Martinus?</p>
+    </header>
+
+    <div class="quiz-shell" id="fan-quiz" data-quiz-status="question">
+      <main class="quiz-main">
+        <div class="quiz-topbar">
+          <div>
+            <span id="quiz-position">Question 1 of 24</span>
+            <strong id="quiz-category">Origins</strong>
+          </div>
+          <span id="quiz-percent">4%</span>
+        </div>
+        <div class="quiz-progress" aria-hidden="true"><span id="quiz-progress-bar"></span></div>
+
+        <section class="quiz-question" id="quiz-question-panel" aria-labelledby="quiz-question">
+          <h2 id="quiz-question" tabindex="-1">Loading question…</h2>
+          <div class="quiz-answers" id="quiz-answers" role="group" aria-label="Answer choices"></div>
+
+          <div class="quiz-feedback" id="quiz-feedback" hidden>
+            <div>
+              <strong id="quiz-feedback-title"></strong>
+              <p id="quiz-explanation"></p>
+            </div>
+            <a id="quiz-source" href="#" target="_blank" rel="noopener"><span id="quiz-source-label">Official source</span> {{ partial "icon.html" "external" }}</a>
+          </div>
+
+          <div class="quiz-next-row" id="quiz-next-row" hidden>
+            <button class="btn btn-blue" id="quiz-next" type="button">
+              <span>Next question</span>
+              {{ partial "icon.html" "arrow-right" }}
+            </button>
+          </div>
+        </section>
+
+        <section class="quiz-result" id="quiz-result" hidden aria-labelledby="quiz-result-title">
+          <span class="quiz-result-label">Quiz complete</span>
+          <div class="quiz-result-score"><strong id="quiz-final-score">0</strong><span>/ 24</span></div>
+          <h2 id="quiz-result-title">M&amp;M Expert</h2>
+          <p id="quiz-result-message"></p>
+          <div class="quiz-result-actions">
+            <button class="btn btn-purple" id="quiz-restart" type="button">
+              {{ partial "icon.html" "restart" }}
+              <span>Play again</span>
+            </button>
+            <a class="btn btn-ghost" href="{{ "/music/" | relURL }}">Explore the music</a>
+          </div>
+        </section>
+      </main>
+
+      <aside class="quiz-sidebar" aria-label="Quiz score and categories">
+        <section class="quiz-stats">
+          <div><span>Correct</span><strong id="quiz-score">0</strong></div>
+          <div><span>Streak</span><strong id="quiz-streak">0</strong></div>
+          <div><span>Best</span><strong id="quiz-best">0</strong></div>
+        </section>
+
+        <section class="quiz-categories">
+          <h2>Question mix</h2>
+          <ul>
+            <li><span class="category-dot origins"></span>Origins &amp; early years</li>
+            <li><span class="category-dot music"></span>Music &amp; collaborations</li>
+            <li><span class="category-dot mello"></span>Melodifestivalen</li>
+            <li><span class="category-dot eurovision"></span>Eurovision &amp; records</li>
+          </ul>
+        </section>
+
+        <div class="quiz-note">
+          {{ partial "icon.html" "star" }}
+          <p>Facts are linked to official sources after every answer.</p>
+        </div>
+      </aside>
+
+      <p class="sr-only" id="quiz-announcer" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<script id="quiz-data" type="application/json">{{ hugo.Data.quiz | jsonify | safeJS }}</script>
+{{ with resources.Get "js/quiz-core.js" }}
+  {{ $core := . | minify | fingerprint }}
+  <script src="{{ $core.RelPermalink }}" integrity="{{ $core.Data.Integrity }}"></script>
+{{ end }}
+{{ with resources.Get "js/quiz.js" }}
+  {{ $quiz := . | minify | fingerprint }}
+  <script src="{{ $quiz.RelPermalink }}" integrity="{{ $quiz.Data.Integrity }}"></script>
+{{ end }}
+{{ end }}

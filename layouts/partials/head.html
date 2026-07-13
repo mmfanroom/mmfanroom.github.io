@@ -42,4 +42,15 @@
       {{ end }}
     {{ end }}
   {{ end }}
+
+  {{ if eq .Section "quiz" }}
+    {{ with resources.Get "css/quiz.css" }}
+      {{ if hugo.IsProduction }}
+        {{ $quizCSS := . | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ $quizCSS.RelPermalink }}" integrity="{{ $quizCSS.Data.Integrity }}">
+      {{ else }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{ end }}
+    {{ end }}
+  {{ end }}
 </head>

@@ -1,0 +1,335 @@
+- id: relationship
+  category: Origins
+  question: "What is the relationship between Marcus and Martinus?"
+  options:
+    - "Childhood friends"
+    - "Cousins"
+    - "Twin brothers"
+    - "School bandmates"
+  answer: 2
+  explanation: "Marcus and Martinus Gunnarsen are twin brothers."
+  source:
+    label: "SVT Mellopedia"
+    url: "https://mellopedia.svt.se/index.php/Unforgettable"
+
+- id: birthday
+  category: Origins
+  question: "When were Marcus and Martinus born?"
+  options:
+    - "21 February 2002"
+    - "14 May 2001"
+    - "21 February 2004"
+    - "1 September 2002"
+  answer: 0
+  explanation: "Both twins were born on 21 February 2002."
+  source:
+    label: "SVT Mellopedia"
+    url: "https://mellopedia.svt.se/index.php/Unforgettable"
+
+- id: hometown
+  category: Origins
+  question: "Where did the twins grow up?"
+  options:
+    - "Bergen"
+    - "Trofors"
+    - "Stockholm"
+    - "Trondheim"
+  answer: 1
+  explanation: "They grew up in Trofors in Nordland, Norway."
+  source:
+    label: "SVT Mellopedia"
+    url: "https://mellopedia.svt.se/index.php/Unforgettable"
+
+- id: nationality
+  category: Origins
+  question: "Which country are Marcus and Martinus from?"
+  options:
+    - "Sweden"
+    - "Denmark"
+    - "Finland"
+    - "Norway"
+  answer: 3
+  explanation: "Marcus and Martinus are a Norwegian pop duo."
+  source:
+    label: "SVT News"
+    url: "https://www.svt.se/kultur/vinnare-i-melodifestivalen-2024-marcus-och-martinus"
+
+- id: mgpjr-contest
+  category: Early Years
+  question: "Which Norwegian competition did they win in 2012?"
+  options:
+    - "The Voice Norge"
+    - "Melodi Grand Prix Junior"
+    - "Idol Norge"
+    - "Stjernekamp"
+  answer: 1
+  explanation: "Their national breakthrough came from winning Melodi Grand Prix Junior 2012."
+  source:
+    label: "SVT Mellopedia"
+    url: "https://mellopedia.svt.se/index.php/Unforgettable"
+
+- id: mgpjr-song
+  category: Early Years
+  question: "Which song did they perform at MGPjr 2012?"
+  options:
+    - "Elektrisk"
+    - "Plystre på deg"
+    - "To dråper vann"
+    - "Leah"
+  answer: 2
+  explanation: "They competed with the autobiographical song “To dråper vann”."
+  source:
+    label: "NRK archive"
+    url: "https://arkiv.nrk.no/programoversikt/avansert/indexb607.html"
+
+- id: drops-translation
+  category: Early Years
+  question: "What does “To dråper vann” mean in English?"
+  options:
+    - "Two drops of water"
+    - "Two hearts together"
+    - "Under the rain"
+    - "Two blue oceans"
+  answer: 0
+  explanation: "The Norwegian title translates to “Two drops of water”."
+  source:
+    label: "SVT Mellopedia"
+    url: "https://mellopedia.svt.se/index.php/Unforgettable"
+
+- id: mgpjr-age
+  category: Early Years
+  question: "How old were they during MGPjr 2012?"
+  options:
+    - "8"
+    - "10"
+    - "12"
+    - "14"
+  answer: 1
+  explanation: "NRK introduced Marcus and Martinus as 10-year-old twins in the 2012 final."
+  source:
+    label: "NRK archive"
+    url: "https://arkiv.nrk.no/programoversikt/avansert/indexb607.html"
+
+- id: mello-debut-year
+  category: Melodifestivalen
+  question: "In which year did they debut in Melodifestivalen?"
+  options:
+    - "2021"
+    - "2022"
+    - "2023"
+    - "2024"
+  answer: 2
+  explanation: "They made their Melodifestivalen debut in 2023."
+  source:
+    label: "SVT Mellopedia"
+    url: "https://mellopedia.svt.se/index.php/Unforgettable"
+
+- id: air-entry
+  category: Melodifestivalen
+  question: "Which song was their first Melodifestivalen entry?"
+  options:
+    - "Air"
+    - "Unforgettable"
+    - "Heartbeat"
+    - "Another Life"
+  answer: 0
+  explanation: "“Air” was their entry in Melodifestivalen 2023."
+  source:
+    label: "SVT Mellopedia"
+    url: "https://mellopedia.svt.se/index.php/Unforgettable"
+
+- id: air-result
+  category: Melodifestivalen
+  question: "Where did “Air” finish in the Melodifestivalen 2023 final?"
+  options:
+    - "First"
+    - "Second"
+    - "Fourth"
+    - "Sixth"
+  answer: 1
+  explanation: "“Air” finished second, behind Loreen’s “Tattoo”."
+  source:
+    label: "SVT News"
+    url: "https://www.svt.se/kultur/vinnare-i-melodifestivalen-2024-marcus-och-martinus"
+
+- id: mello-2024-song
+  category: Melodifestivalen
+  question: "Which song did they enter in Melodifestivalen 2024?"
+  options:
+    - "We Are Not The Same"
+    - "When All The Lights Go Out"
+    - "Unforgettable"
+    - "Make You Believe In Love"
+  answer: 2
+  explanation: "They returned to Melodifestivalen with “Unforgettable”."
+  source:
+    label: "SVT News"
+    url: "https://www.svt.se/kultur/vinnare-i-melodifestivalen-2024-marcus-och-martinus"
+
+- id: mello-2024-result
+  category: Melodifestivalen
+  question: "What was their result in Melodifestivalen 2024?"
+  options:
+    - "They won"
+    - "They placed second"
+    - "They reached the semi-final"
+    - "They placed fifth"
+  answer: 0
+  explanation: "Marcus and Martinus won Melodifestivalen 2024 with “Unforgettable”."
+  source:
+    label: "SVT News"
+    url: "https://www.svt.se/kultur/vinnare-i-melodifestivalen-2024-marcus-och-martinus"
+
+- id: eurovision-country
+  category: Eurovision
+  question: "Which country did they represent at Eurovision 2024?"
+  options:
+    - "Norway"
+    - "Sweden"
+    - "Denmark"
+    - "Finland"
+  answer: 1
+  explanation: "Their Melodifestivalen victory made them Sweden’s Eurovision 2024 representatives."
+  source:
+    label: "Eurovision"
+    url: "https://eurovision.tv/event/malmo-2024/grand-final"
+
+- id: eurovision-city
+  category: Eurovision
+  question: "Which city hosted Eurovision 2024?"
+  options:
+    - "Stockholm"
+    - "Gothenburg"
+    - "Malmö"
+    - "Oslo"
+  answer: 2
+  explanation: "The 2024 Eurovision Song Contest was held in Malmö, Sweden."
+  source:
+    label: "Eurovision"
+    url: "https://eurovision.tv/event/malmo-2024/grand-final"
+
+- id: eurovision-result
+  category: Eurovision
+  question: "Where did “Unforgettable” finish in the Eurovision 2024 Grand Final?"
+  options:
+    - "Fifth"
+    - "Seventh"
+    - "Ninth"
+    - "Twelfth"
+  answer: 2
+  explanation: "Sweden finished ninth in the Eurovision 2024 Grand Final."
+  source:
+    label: "Eurovision results"
+    url: "https://eurovision.tv/event/malmo-2024/grand-final/results"
+
+- id: mello-points
+  category: Melodifestivalen
+  question: "How many points did “Unforgettable” receive in the Melodifestivalen 2024 final?"
+  options:
+    - "104"
+    - "151"
+    - "177"
+    - "201"
+  answer: 2
+  explanation: "They won with 177 points: 85 from the international juries and 92 from the public."
+  source:
+    label: "SVT News"
+    url: "https://www.svt.se/kultur/vinnare-i-melodifestivalen-2024-marcus-och-martinus"
+
+- id: mello-record
+  category: Melodifestivalen
+  question: "Which Melodifestivalen record did their 2024 victory set?"
+  options:
+    - "First winning twins"
+    - "Youngest winners"
+    - "First fully foreign act to win"
+    - "Highest public score ever"
+  answer: 2
+  explanation: "They became the first fully foreign act to win Melodifestivalen."
+  source:
+    label: "SVT Mellopedia"
+    url: "https://mellopedia.svt.se/index.php/Unforgettable"
+
+- id: elektrisk-feature
+  category: Music
+  question: "Who features on “Elektrisk”?"
+  options:
+    - "Madcon"
+    - "Katastrofe"
+    - "bbno$"
+    - "Silentó"
+  answer: 1
+  explanation: "“Elektrisk” is a Marcus & Martinus collaboration with Katastrofe."
+  source:
+    label: "Official VEVO video"
+    url: "https://www.youtube.com/watch?v=ri5_fzndMBg"
+
+- id: girls-feature
+  category: Music
+  question: "Which duo features on “Girls”?"
+  options:
+    - "Madcon"
+    - "Broiler"
+    - "Erik og Kriss"
+    - "Karpe"
+  answer: 0
+  explanation: "“Girls” features the Norwegian duo Madcon."
+  source:
+    label: "Official VEVO video"
+    url: "https://www.youtube.com/watch?v=_j5KR28qtsI"
+
+- id: light-it-up-feature
+  category: Music
+  question: "Who joins them on “Light It Up”?"
+  options:
+    - "Astrid S"
+    - "Samantha J"
+    - "Julie Bergan"
+    - "Zara Larsson"
+  answer: 1
+  explanation: "Samantha J features on “Light It Up”."
+  source:
+    label: "Official VEVO video"
+    url: "https://www.youtube.com/watch?v=lwObaOnEu4A"
+
+- id: not-the-same-feature
+  category: Music
+  question: "Who features on “We Are Not The Same”?"
+  options:
+    - "VIZE"
+    - "bbno$"
+    - "Katastrofe"
+    - "Madcon"
+  answer: 1
+  explanation: "The track is a collaboration with Canadian rapper bbno$."
+  source:
+    label: "Official VEVO video"
+    url: "https://www.youtube.com/watch?v=W9Z837Lrghk"
+
+- id: elektrisk-record
+  category: Records
+  question: "Which song spent a record 66 weeks in Norway’s top 10?"
+  options:
+    - "Heartbeat"
+    - "Girls"
+    - "Elektrisk"
+    - "Unforgettable"
+  answer: 2
+  explanation: "SVT’s artist history credits “Elektrisk” with 66 weeks in Norway’s top 10."
+  source:
+    label: "SVT Mellopedia"
+    url: "https://mellopedia.svt.se/index.php/Unforgettable"
+
+- id: masked-singer
+  category: TV
+  question: "Which Swedish TV competition did they win in 2022?"
+  options:
+    - "Idol"
+    - "Let’s Dance"
+    - "Masked Singer"
+    - "Talang"
+  answer: 2
+  explanation: "Marcus and Martinus won the Swedish edition of Masked Singer in 2022."
+  source:
+    label: "SVT Mellopedia"
+    url: "https://mellopedia.svt.se/index.php/Unforgettable"
