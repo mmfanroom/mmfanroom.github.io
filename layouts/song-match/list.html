@@ -1,0 +1,120 @@
+{{ define "main" }}
+<section class="setlist-page">
+  <div class="container setlist-container">
+    <header class="setlist-intro">
+      <div>
+        <span class="setlist-kicker">Music reaction game</span>
+        <h1>Setlist <span>Sprint</span></h1>
+        <p>Catch the right tracks before the beat drops.</p>
+      </div>
+      <nav class="fan-game-tabs" aria-label="Fan games">
+        <a href="{{ "/game/" | relURL }}">Stage Rush</a>
+        <a href="{{ "/song-match/" | relURL }}" class="active" aria-current="page">Setlist Sprint</a>
+      </nav>
+    </header>
+
+    <div class="setlist-shell" id="setlist-sprint" data-game-status="ready">
+      <main class="setlist-main">
+        <div class="setlist-hud" aria-label="Game status">
+          <div><span>Level</span><strong id="setlist-level">1 / 3</strong></div>
+          <div><span>Score</span><strong id="setlist-score">0000</strong></div>
+          <div class="setlist-time"><span>Time</span><strong id="setlist-time">36</strong></div>
+          <div class="setlist-combo"><span>Combo</span><strong id="setlist-combo">x0</strong></div>
+        </div>
+
+        <div class="setlist-progress-row">
+          <span id="setlist-command">Find 4 tracks</span>
+          <strong id="setlist-found">0 / 4</strong>
+        </div>
+        <div class="setlist-progress" aria-hidden="true"><span id="setlist-progress-bar"></span></div>
+
+        <section class="setlist-stage" aria-labelledby="setlist-category">
+          <div class="setlist-stage-heading">
+            <span>Now collecting</span>
+            <h2 id="setlist-category">New Fan Starter Pack</h2>
+          </div>
+
+          <div class="setlist-card-grid" id="setlist-cards"></div>
+
+          <div class="setlist-overlay" id="setlist-overlay">
+            <div class="setlist-overlay-content">
+              <span id="setlist-overlay-tag">Level 1</span>
+              <h2 id="setlist-overlay-title">Starter Lights</h2>
+              <p id="setlist-overlay-copy">Find 4 Starter Pack tracks.</p>
+              <button class="btn btn-purple" id="setlist-primary" type="button">
+                {{ partial "icon.html" "play" }}
+                <span>Start level</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div class="setlist-controls" aria-label="Game actions">
+          <button class="setlist-icon-btn" id="setlist-pause" type="button" title="Pause" aria-label="Pause game">
+            {{ partial "icon.html" "pause" }}
+          </button>
+          <button class="setlist-icon-btn" id="setlist-restart" type="button" title="Restart" aria-label="Restart level">
+            {{ partial "icon.html" "restart" }}
+          </button>
+          <button class="setlist-icon-btn" id="setlist-sound" type="button" title="Turn sound on" aria-label="Turn sound on" aria-pressed="false">
+            <span class="sound-off">{{ partial "icon.html" "volume-off" }}</span>
+            <span class="sound-on" hidden>{{ partial "icon.html" "volume" }}</span>
+          </button>
+        </div>
+      </main>
+
+      <aside class="setlist-sidebar" aria-label="Setlist Sprint levels and records">
+        <section class="setlist-side-section">
+          <div class="setlist-side-heading">
+            <span>Tour stops</span>
+            <strong id="setlist-unlocked">1 / 3 open</strong>
+          </div>
+          <div class="setlist-level-list">
+            <button type="button" data-setlist-level="0" class="setlist-level-option active">
+              <span class="setlist-level-number">01</span>
+              <span><strong>Starter</strong><small>Starter Lights</small></span>
+              <span class="setlist-level-state">Selected</span>
+            </button>
+            <button type="button" data-setlist-level="1" class="setlist-level-option" disabled>
+              <span class="setlist-level-number">02</span>
+              <span><strong>Emotional</strong><small>Afterglow</small></span>
+              <span class="setlist-level-state">Locked</span>
+            </button>
+            <button type="button" data-setlist-level="2" class="setlist-level-option" disabled>
+              <span class="setlist-level-number">03</span>
+              <span><strong>Live</strong><small>Arena Rush</small></span>
+              <span class="setlist-level-state">Locked</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="setlist-records">
+          <div><span>Best score</span><strong id="setlist-best">0000</strong></div>
+          <div><span>Best combo</span><strong id="setlist-best-combo">x0</strong></div>
+          <div><span>Misses</span><strong id="setlist-misses">0</strong></div>
+        </section>
+
+        <div class="setlist-next-up">
+          {{ partial "icon.html" "music" }}
+          <div>
+            <span>Current set</span>
+            <strong id="setlist-current-set">Starter Pack</strong>
+          </div>
+        </div>
+      </aside>
+
+      <p class="sr-only" id="setlist-announcer" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<script id="setlist-data" type="application/json">{{ hugo.Data.songs | jsonify | safeJS }}</script>
+{{ with resources.Get "js/song-match-core.js" }}
+  {{ $core := . | minify | fingerprint }}
+  <script src="{{ $core.RelPermalink }}" integrity="{{ $core.Data.Integrity }}"></script>
+{{ end }}
+{{ with resources.Get "js/song-match.js" }}
+  {{ $game := . | minify | fingerprint }}
+  <script src="{{ $game.RelPermalink }}" integrity="{{ $game.Data.Integrity }}"></script>
+{{ end }}
+{{ end }}

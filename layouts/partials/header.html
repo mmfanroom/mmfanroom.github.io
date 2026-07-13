@@ -11,9 +11,10 @@
     <nav>
       <ul class="nav-links" id="navlinks">
         {{ $cur := .RelPermalink }}
+        {{ $section := .Section }}
         {{ range .Site.Menus.main }}
           {{ $u := .URL | relLangURL }}
-          {{ $active := or (eq $cur $u) (and (ne $u "/") (not (strings.Contains $u "#")) (hasPrefix $cur $u)) }}
+          {{ $active := or (eq $cur $u) (and (ne $u "/") (not (strings.Contains $u "#")) (hasPrefix $cur $u)) (and (eq $u "/game/") (eq $section "song-match")) }}
           <li><a href="{{ .URL | relURL }}"{{ if $active }} class="active"{{ end }}>{{ .Name }}</a></li>
         {{ end }}
       </ul>

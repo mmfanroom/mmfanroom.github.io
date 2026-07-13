@@ -2,9 +2,15 @@
 <section class="game-page">
   <div class="container game-container">
     <header class="game-intro">
-      <span class="game-kicker">Pixel concert challenge</span>
-      <h1><span>Stage</span> Rush</h1>
-      <p>Reach the mic. Keep the stage safe.</p>
+      <div>
+        <span class="game-kicker">Pixel concert challenge</span>
+        <h1><span>Stage</span> Rush</h1>
+        <p>Reach the mic. Keep the stage safe.</p>
+      </div>
+      <nav class="fan-game-tabs" aria-label="Fan games">
+        <a href="{{ "/game/" | relURL }}" class="active" aria-current="page">Stage Rush</a>
+        <a href="{{ "/song-match/" | relURL }}">Setlist Sprint</a>
+      </nav>
     </header>
 
     <div class="game-shell" id="stage-rush" data-game-root>

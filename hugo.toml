@@ -44,7 +44,7 @@ disableKinds = ["taxonomy", "term"]
   url = "/fanwall/"
   weight = 50
 [[menu.main]]
-  name = "Game"
+  name = "Games"
   url = "/game/"
   weight = 55
 [[menu.main]]

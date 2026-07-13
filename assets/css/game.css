@@ -21,14 +21,39 @@
 }
 
 .game-intro h1 span { color: var(--blue-br); }
-.game-intro p { margin: 0 0 5px; color: var(--muted); }
+.game-intro p { margin: 4px 0 0; color: var(--muted); }
 
 .game-kicker {
-  grid-column: 1 / -1;
+  display: block;
+  margin-bottom: 7px;
   color: var(--pink);
   font: 700 0.68rem/1 var(--font-head);
   letter-spacing: 1.5px;
   text-transform: uppercase;
+}
+
+.fan-game-tabs {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #0d0a25;
+}
+
+.fan-game-tabs a {
+  padding: 8px 12px;
+  color: var(--muted);
+  font: 700 0.72rem/1 var(--font-head);
+  text-align: center;
+  border-radius: 4px;
+}
+
+.fan-game-tabs a:hover { color: var(--text); }
+.fan-game-tabs a.active {
+  color: var(--text);
+  background: #25204b;
+  box-shadow: inset 0 -2px 0 var(--blue-br);
 }
 
 .game-shell {
@@ -334,6 +359,7 @@
   .game-intro { display: block; padding-inline: 4px; }
   .game-kicker { display: block; margin-bottom: 8px; writing-mode: initial; transform: none; }
   .game-intro p { margin: 6px 0 0; }
+  .fan-game-tabs { width: 100%; margin-top: 17px; }
   .game-play-area { padding: 10px; }
   .game-hud { margin-bottom: 8px; }
   .hud-item { padding: 6px 7px; }

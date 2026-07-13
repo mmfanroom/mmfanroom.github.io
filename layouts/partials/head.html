@@ -53,4 +53,15 @@
       {{ end }}
     {{ end }}
   {{ end }}
+
+  {{ if eq .Section "song-match" }}
+    {{ with resources.Get "css/song-match.css" }}
+      {{ if hugo.IsProduction }}
+        {{ $songMatchCSS := . | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ $songMatchCSS.RelPermalink }}" integrity="{{ $songMatchCSS.Data.Integrity }}">
+      {{ else }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{ end }}
+    {{ end }}
+  {{ end }}
 </head>
